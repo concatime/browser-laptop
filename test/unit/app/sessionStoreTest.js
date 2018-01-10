@@ -1540,7 +1540,7 @@ describe('sessionStore unit tests', function () {
 
           before(function () {
             oldValue = data.getIn(['sites', 'https://pinned-tab.com|0|0'])
-            newValue = runPreMigrations.pinnedSites['https://pinned-tab.com|0|0']
+            newValue = runPreMigrations.pinnedSites['https://pinned-tab.com|0']
           })
 
           it('copies lastAccessedTime', function () {

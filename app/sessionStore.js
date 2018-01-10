@@ -676,7 +676,9 @@ module.exports.runPreMigrations = (data) => {
       const site = data.sites[key]
       if (site.tags && site.tags.includes('pinned')) {
         delete site.tags
-        data.pinnedSites[key] = site
+        // matches `getKey` from pinnedSitesUtil
+        const pinnedSiteKey = `${site.location}|${site.partitionNumber}`
+        data.pinnedSites[pinnedSiteKey] = site
       }
     }
 
